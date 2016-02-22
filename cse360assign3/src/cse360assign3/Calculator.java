@@ -7,25 +7,27 @@ public class Calculator {
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history="0";
 	}
 	
 	public int getTotal () {
+		System.out.println(total);
 		return total;
 	}
 	
 	public void add (int value) {
 		total+=value;
-		
+		history+=" + "+value;
 	}
 	
 	public void subtract (int value) {
 		total=total-value;
-		
+		history+=" - "+value;
 	}
 	
 	public void multiply (int value) {
 		total=total*value;
-		
+		history+=" * "+value;
 	}
 	
 	public void divide (int value) {
@@ -34,11 +36,12 @@ public class Calculator {
 		}
 		else{
 			total=total/value;
-			
+			history+=" / "+value;
 		}
 	}
 	
 	public String getHistory () {
-		return "";
+		System.out.println(history);
+		return history;
 	}
 }

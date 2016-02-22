@@ -22,6 +22,7 @@ public class CalculatorTest {
 	public void testCalculator() {
 		myCalculator = new Calculator();
 		assertEquals(0, myCalculator.getTotal());
+		assertEquals("0", myCalculator.getHistory());
 	}
 	
 	@Test
@@ -63,6 +64,13 @@ public class CalculatorTest {
 	
 	@Test
 	public void testGetHistory() {
+		myCalculator = new Calculator();
+		myCalculator.add(4);
+		myCalculator.subtract(2);
+		myCalculator.multiply(2);
+		myCalculator.add(5);
+		assertEquals(9, myCalculator.getTotal());
+		assertEquals("0 + 4 - 2 * 2 + 5", myCalculator.getHistory());
 		
 	}
 
